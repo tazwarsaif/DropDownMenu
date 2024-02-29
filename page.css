@@ -1,0 +1,153 @@
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: hsl(244, 23%, 13%);
+    background-image: url("https://images.pexels.com/photos/956981/milky-way-starry-sky-night-sky-star-956981.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode:color-dodge;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1rem;
+}
+
+a:hover{
+    color: skyblue;
+}
+
+/* HEADER */
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_bnt{
+    color: whitesmoke;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_bnt{
+    background-color: rgb(90, 165, 165);
+    color: whitesmoke;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+
+.action_bnt:hover{
+    SCALE: 1.06;
+    color:hsl(244, 23%, 13%);
+}
+
+.action_bnt:active{
+    scale: 0.95;
+}
+
+/* DROPDOWNMEANU */
+.dropdown_menu{
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background:rgba(212, 222, 222, 0.15);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: 240px;
+}
+
+.dropdown_menu .action_bnt{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section#home{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(195, 205, 205);
+}
+#home h1{
+    font-size: 3rem;
+}
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 992px) {
+    .navbar .links,
+    .navbar .action_bnt{
+        display: none;
+    }
+
+    .navbar .toggle_bnt{
+        display: block;
+
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+}
+
+@media (max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
